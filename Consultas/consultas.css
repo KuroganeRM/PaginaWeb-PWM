@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: url(../Fondos/fConsultas.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    
+}
+
+.body{
+    width: 90%;
+    max-width: 87.5em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer{
+    margin: 3.125em;
+    text-align: center;
+}
+
+h1{
+    margin-top: 1.875rem;
+    margin-bottom: 1.875rem;
+    text-align: center;
+    font-size: 2.375em;
+    color: #fda500;
+}
+
+.container{
+    padding: 1.25rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    text-align: left;
+    margin: 1.25rem;
+    color: white;
+    justify-content: center;
+}
+
+.LP{
+    max-width: 43.75rem;
+    height: auto;
+}
+
+a{
+    outline: none;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+a:hover {
+    font-size: 30px;
+}  
+  
+a:visited {
+    color: #fda500;
+}
+
+a:active {
+    color: #ffcb69;
+}
+
+a:link {
+    color: #fda500;
+}
+
+@media (max-width: 756px) {
+
+    .body img{
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .body{
+        width: 100%;
+    }
+    header{
+        font-size: 0.75em;
+    }
+    .container{
+        font-size: 0.75em;
+    }
+    
+    .LP{
+        max-width: 40em;
+    }
+}
