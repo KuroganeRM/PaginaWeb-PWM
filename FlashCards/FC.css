@@ -1,0 +1,139 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background: url(../Fondos/foRetos.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    align-items: center;
+    justify-content: center;
+}
+
+footer{
+    margin-top: 60px;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 30px;
+}
+
+.card div{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transition: 1s;
+    padding: 10px;
+}
+
+.card .front{
+    background: #fda500;
+    transform: perspective(500px) rotateY(0deg);
+    border: 2px solid #ffcb69;
+    text-align: center;
+}
+
+.front p{
+    padding: 10px;
+    color: white;
+}
+
+.card .back{
+    background: #ffcb69;
+    font-size: 0.7rem;
+    transform: perspective(500px) rotateY(180deg);
+    text-align: center;
+    align-items: center;
+    display: block;
+
+}
+
+.card:hover .front{
+    transform: perspective(500px) rotateY(180deg);
+}
+
+.card:hover .back{
+    transform: perspective(500px) rotateY(360deg);
+}
+
+a{
+    outline: none;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+a:hover {
+    font-size: 30px;
+}  
+  
+a:visited {
+    color: #fda500;
+}
+
+a:active {
+    color: #ffcb69;
+}
+
+a:link {
+    color: #fda500;
+}
+
+h1{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 38px;
+    color: #fda500;
+}
+
+h1 span{
+    color: white;
+}
+.back img{
+
+    width: 85%;
+    height:45%;
+    object-fit: cover;
+    border-radius: 200px;
+    position: relative;
+
+  }
+
+  
+
+@media (max-width: 576px) {
+
+    .body{
+        align-items: center;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .card{
+        width: 200px;
+        height: 350px;
+        margin: 20px;
+    }
+
+    .back img{
+        width: 70%;
+        height: 40%;
+    }
+
+    .card .back{
+        font-size: 0.715em;
+    }
+}
