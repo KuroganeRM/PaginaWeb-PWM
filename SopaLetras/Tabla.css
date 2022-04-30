@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: url(../Fondos/foRetos.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+
+.body{
+    width: 70%;
+    max-width: 87.5em;
+    margin: 0 auto;
+}
+
+h1{
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+    font-size: 2.375rem;
+    color: #fda500;
+}
+
+.span1{
+    color: white;
+}
+
+.span2{
+    color: #fda500;
+}
+
+
+
+table td{
+    padding: 0.3125em;
+    border: 0.1px solid rgba(0, 0, 0,.5);
+    background: whitesmoke;
+}
+
+tr{
+    text-align: center;
+}
+
+table {
+    border: 2px solid #da920d;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    max-width: 43.75em;
+    height: auto;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul{
+    list-style-type: square;
+    font-size: 0.875rem;
+    color: white;
+    margin: 0.3125em;
+}
+
+ul li{
+    margin: 0.3125rem;
+}
+
+footer{
+    margin: 3.125em;
+    text-align: center;
+}
+.words{
+    width: 25%;
+    max-width: 12.5em;
+    background-color: rgba(0, 0, 0,.7);
+}
+.words p{
+    color: white;
+    text-align: center;
+}
+
+.keywords td{
+
+    background-color: #fda500;
+}
+
+a{
+    outline: none;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+a:hover {
+    font-size: 30px;
+}  
+  
+a:visited {
+    color: #fda500;
+}
+
+a:active {
+    color: #ffcb69;
+}
+
+a:link {
+    color: #fda500;
+}
+
+@media (max-width: 1090px) {
+
+    h1{
+        font-size: 1.5em;
+    }
+
+
+    table{
+        width: 80%;
+    }
+
+    table td{
+        font-size: 0.65em;
+    }
+
+    .words{
+        width: 80%;
+        margin: 0.75rem;
+    }
+
+    .words p{
+        font-size: 1.15em;
+    }
+
+    .words li{
+        font-size: 0.9em;
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .body{
+        align-items: center;
+    }
+
+    h1{
+        font-size: 1.5em;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+    table{
+        margin-bottom: 1.25rem;
+        width: 100%;
+    }
+
+    table td{
+        font-size: 0.5em;
+    }
+
+    .words{
+        width: 100%;
+    }
+
+    .words p{
+        font-size: 0.9em;
+    }
+
+    .words li{
+        font-size: 0.75em;
+    }
+
+}
