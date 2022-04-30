@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatalogoDeProductos</title>
+    <link rel="stylesheet" href="../CSS/skeleton.css">
+    <link rel="stylesheet" href="carrito.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div>
+            <h1><img src="../Images/Yggdrasil.png" alt="Icono" width="175">
+                <p>Yggdrasil</p>
+            </h1>
+        </div>
+        <div class="header-submenu">
+            <ul>
+                <li class="submenu">
+                    <img src="../Images/cart.png" alt="Carrito" width="50">
+                    <div id="carrito">
+                        <!--<p class="vacio">Carrito vacio</p>-->
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nombre del Curso</th>
+                                    <th>Imagen</th>
+                                    <th>Descripcion</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Introduccion al desarrollo web</td>
+                                    <td>
+                                        <img src="https://agenciawinners.com/wp-content/uploads/2020/07/desarrollo-web.png"
+                                            alt="ImagenCurso1" width="100">
+                                    </td>
+                                    <td>Aprende los principales <br>lenguajes que dominan internet: <br>JavaScript, HTML5 y CSS3
+                                    </td>
+                                    <td>Gratis</td>
+                                    <td><a href="#" class="borrar-curso">X</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Programacion: JAVA</td>
+                                    <td>
+                                        <img src="https://f.hubspotusercontent00.net/hubfs/53/Google%20Drive%20Integration/How%20to%20Start%20Coding%20The%20Ultimate%20Guide%20for%20Beginner%20Programmers.jpeg"
+                                            alt="ImagenCurso2" width="100">
+                                    </td>
+                                    <td>Aprende a programar <br>en el lenguaje Java y <br>conviértete en un programador Java
+                                        Experto.</td>
+                                    <td>Gratis</td>
+                                    <td><a href="#" class="borrar-curso">X</a></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <a href="#" class="button u-full-width">Vaciar Carrito</a>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+    </header>
+    <div class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="six columns">
+                    <div class="contenido-hero">
+                        <h2>Prueba un curso</h2>
+                        <p>Todos los cursos gratis por tiempo limitado</p>
+                        <form>
+                            <input class="u-full-width" type="text" placeholder="¿Que te gustaria aprender hoy?"
+                                id="buscador">
+                            <input class="submit-buscador" type="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lista-cursos" class="container">
+        <h1 class="encabezado">Cursos</h1>
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+                    <img src="https://agenciawinners.com/wp-content/uploads/2020/07/desarrollo-web.png"
+                        alt="ImagenCurso1" class="imagen-curso u-full-width">
+                    <div class="info-card">
+                        <h4>Introduccion a desarrollo web</h4>
+                        <p>Aprende los principales lenguajes que dominan internet: JavaScript, HTML5 y CSS3</p>
+                        <p class="precio">Precio:<span> Gratis</span></p>
+                        <a href="#" class="u-full-width button input agregar-carrito" data-id="1">Agregar
+                            al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+                    <img src="https://theinventorhouse.org/wp-content/uploads/2022/02/curso-sql-server.jpeg"
+                        alt="ImagenCurso1" class="imagen-curso u-full-width">
+                    <div class="info-card">
+                        <h4>Manejo de bases de datos: SQL Server</h4>
+                        <p>Crea y programa tu propia una base de datos relacional. Aprende Bases de Datos, Consultas, Funciones, Tablas ....</p>
+                        <p class="precio">Precio:<span> Gratis</span></p>
+                        <a href="#" class="u-full-width button input agregar-carrito" data-id="1">Agregar
+                            al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+                    <img src="https://f.hubspotusercontent00.net/hubfs/53/Google%20Drive%20Integration/How%20to%20Start%20Coding%20The%20Ultimate%20Guide%20for%20Beginner%20Programmers.jpeg"
+                        alt="ImagenCurso1" class="imagen-curso u-full-width" width="200">
+                    <div class="info-card">
+                        <h4>Programacion: JAVA</h4>
+                        <p>Aprende a programar en el lenguaje Java y conviértete en un programador Java Experto.</p>
+                        <p class="precio">Precio:<span> Gratis</span></p>
+                        <a href="#" class="u-full-width button input agregar-carrito" data-id="1">Agregar
+                            al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer><a class="return" href="../index.html">
+            <p>Regresar</p>
+        </a></footer>
+</body>
+
+</html>
