@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: url(Fondos/fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    line-height: 1.4em;
+}
+
+.body{
+    width: 90%;
+    max-width: 87.5em;
+    margin: 0 auto;
+}
+
+.name{
+    color: #FFFFFF;
+}
+
+.lastname{
+    color: #ECA34C;
+}
+
+.content{
+
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+header{
+
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2.5em;
+}
+
+.footer-content{
+
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    color: white; 
+    font-size: 0.75em;
+}
+section{
+
+    margin: 1.25em auto;
+}
+
+.container{
+    background: #ECA34C;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 0.125rem 1.25rem 0.125rem 1.25rem;
+    text-align: center;
+    font-size: 0.75em;
+}
+article{
+    border-radius: 15px;
+    border: 1px solid black;
+    background:rgba(0, 0, 0, 0.5);
+}
+
+ul{
+    list-style-type: square;
+    font-size: 0.875rem;
+    color: white;
+    margin: 0.5rem auto;
+    padding: 0.125rem auto;
+}
+
+.img-profile{
+    width: 20%;
+    max-width: 15.625em;
+    height: auto;
+    border-radius: 50%;
+}
+
+a{
+    text-decoration: none;
+    color: #ECA34C;
+}
+
+footer img{
+    width: 33.33%;
+    max-width: 18rem;
+    height: auto;
+    transition: 0.5s;
+}
+
+li a{
+    transition: 0.3s;
+}
+
+.title{
+    width: 100%;
+    max-width: 31.25rem;
+    text-align: center;
+    transition: 0.5s;
+    font-size: 1.25em;
+}
+
+/*Transitions and decoration*/
+
+.title:hover{
+    font-size: 1.4em;
+    max-width: 35rem;
+}
+
+footer img:hover{
+    max-width: 30em;
+}
+
+li a:hover{
+    font-size: 1.25em;
+}
+
+
+
+@media (max-width: 576px) {
+
+    .header{
+        line-height: 2em;
+    }
+
+    .img-profile{
+        width: 50%;
+    }
+
+    .title{
+        width: 100%;
+        font-size: 0.75em;
+        height:auto ;
+    }
+
+    footer img{
+        width: 80%;
+    }
+
+    footer p{
+        font-size: 1em;
+    }
+
+    .content{
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .content article{
+        margin-bottom: 1.125em;
+    }
+    
+}
