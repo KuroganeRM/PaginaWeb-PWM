@@ -1,9 +1,9 @@
 * {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body{
-    font-family: 'Roboto', sans-serif;
     background: url(../Fondos/foRetos.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -55,6 +55,24 @@ table {
     height: auto;
 }
 
+button {
+    background-color: #fda500;
+    color: black;
+    border-color: #fda500;
+    border-radius: 10px;
+    width: 40%;
+    font-size: 0.5em;
+    height: 2.5rem;
+    transition: 0.5s;
+}
+
+button:hover {
+
+    width: 80%;
+    font-size: 2em;
+}
+
+
 .container{
     display: flex;
     justify-content: space-between;
@@ -76,9 +94,32 @@ footer{
     margin: 3.125em;
     text-align: center;
 }
+
+.right-part{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.right-part #btnReestablecer,#btnResolver{
+    background-color: #fda500;
+    border-radius: 5px;
+    font-size: 0.9em;
+    border: none;
+    width: 50%;
+    margin: 0 10px 0 10px;
+}
+
 .words{
-    width: 25%;
-    max-width: 12.5em;
+    padding: 2px;
+    margin: 10px;
+    width: 100%;
+    max-width: 13em;
     background-color: rgba(0, 0, 0,.7);
 }
 .words p{
@@ -98,7 +139,7 @@ a{
 }
 
 a:hover {
-    font-size: 30px;
+    font-size: 1.875rem;
 }  
   
 a:visited {
