@@ -7,17 +7,22 @@ body {
     margin: 0;
 }
 
-.grey{
+.grey {
     color: #AAAAAA;
 }
 
-.orange{
+.orange {
     color: #F6B715;
 }
-.container {
+
+button p{
+    color: white;
+}
+
+.snack {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 2.25fr 2fr 5fr 0.25fr;
+    grid-template-rows: 0.5fr 2fr 1.75fr 5fr 0.25fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -27,6 +32,38 @@ body {
         "conferencistas conferencistas conferencistas conferencistas"
         "footer footer footer footer";
     width: 600px;
+}
+
+.container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 3fr 2.5fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header header"
+        "imagenInicio imagenInicio"
+        "horarios horarios"
+        "footer footer";
+    width: 600px;
+}
+
+
+
+.horarios {
+    grid-area: horarios;
+}
+
+.horarios-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.horarios-content p {
+    font-size: 1.75em;
 }
 
 .header {
@@ -70,7 +107,7 @@ body {
     justify-content: center;
     text-align: center;
     align-items: center;
-    text-align: center;
+    font-size: 1.25em;
 }
 
 
@@ -79,11 +116,20 @@ body {
     justify-self: stretch;
     align-self: stretch;
     text-align: center;
+    justify-content: center;
 }
 
 .portada img {
     width: 95%;
     height: 95%;
+    justify-content: left;
+    text-align: left;
+    align-items: left;
+}
+
+#img-horarios {
+    width: 60%;
+    text-align: left;
 }
 
 .conferencistas {
@@ -99,7 +145,7 @@ body {
     align-items: center;
 }
 
-.conferencistas-content h1{
+.conferencistas-content h1 {
     color: white;
 }
 
@@ -116,15 +162,16 @@ body {
     display: flex;
     flex-direction: column;
     margin: 5px;
+    padding: 10px;
 }
 
 .card img {
     display: block;
-    max-width: 18.75em;
-    width: 92%;
-    height: 220px;
+    width: 21.875em;
+    height: 21.875em;
     margin: 0.625em;
-    border-radius: 80%;
+    border-radius: 10.9375em;
+    border: black solid 1px;
 }
 
 a {
@@ -135,6 +182,7 @@ a {
 
 a:hover {
     font-size: 1.25em;
+    text-decoration: none;
 }
 
 a:visited {
@@ -149,28 +197,87 @@ a:link {
     color: #fda500;
 }
 
-button{
+#singup-form button{
+    font-size: 0.9em;
+    transition: 0.5s;
+}
+
+#singup-form button:hover{
+    font-size: 1.1em;
+}
+
+.modal-body{
+    text-align: center;
+    justify-content: center;
+}
+
+button {
     background-color: #fda500;
     color: white;
     border-color: #fda500;
     border-radius: 10px;
     width: 40%;
     font-size: 0.8em;
+    height: 40px;
     transition: 0.5s;
 }
 
-button:hover {
+.iniciosesion button:hover {
     font-size: 1em;
 }
-.conf-name{
+
+.conf-name {
     color: #fda500;
 }
 
-@media (min-width: 600px) {
-    .container {
+@media (min-width: 600px) { /*Pantalla mediana*/
+    .snack {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 0.5fr 2.125fr 2.125fr 4fr 0.5fr;
+        grid-template-rows: 0.5fr 2.25fr 1.25fr 5fr 0.25fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "header header header header"
+            "imagenInicio imagenInicio imagenInicio imagenInicio"
+            "iniciosesion iniciosesion iniciosesion iniciosesion"
+            "conferencistas conferencistas conferencistas conferencistas"
+            "footer footer footer footer";
+        width: 100%;
+    }
+
+    .container2 {
+        display: grid;
+        grid-template-columns: 1fr 0.9fr;
+        grid-template-rows: 0.5fr 3.8fr 0.5fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "header header"
+            "horarios imagenInicio"
+            "footer footer";
+        width: 100%;
+    }
+    .conferencistas-info {
+        flex-direction: column;
+    }
+
+    .card img {
+        width: 31.25rem;
+        height: 31.25rem;
+        margin: 1.25rem;
+        border-radius: 15.625rem;
+
+    }
+
+    
+}
+
+@media (min-width: 1080px) {/*Pantalla grande*/
+    .snack {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 2.125fr 2.5fr 4fr 0.5fr;
         gap: 0px 0px;
         grid-auto-flow: row;
         grid-template-areas:
@@ -187,5 +294,18 @@ button:hover {
         flex-direction: row;
     }
 
+    #img-horarios {
+        width: 61%;
+        text-align: left;
+        align-items: left;
+    }
+
+    .card img {
+        width: 18.75rem;
+        height: 18.75rem;
+        margin: 1.25rem;
+        border-radius: 9.375rem;
+
+    }
 
 }

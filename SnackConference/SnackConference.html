@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snack Conference 2022</title>
+    <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="sc.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,13 +16,14 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="snack">
+
         <div class="header">
             <div class="header-content">
                 <div class="Logo">
-                    <img src="../Images/LogoS.png" alt="LogoSnack">
+                    <a href="SnackConference.html"><img src="../Images/LogoS.png" alt="LogoSnack"></a>
                 </div>
-                <p> <a href="#"> <strong>Horarios</strong></a></p>
+                <p> <a href="Horarios.html"> <strong>Horarios</strong></a></p>
                 <p> <a href="#"> <strong>Conferencia en vivo</strong></a></p>
             </div>
         </div>
@@ -35,13 +39,11 @@
                 <p> <span class="grey">¿Quieres participar en</span> <span class="orange"> las conferencias en
                         vivo?</span></p>
                 <br> <br>
-                <button>
-                    <p>Inicia Sesion</p>
+                <button type="button" data-toggle="modal" data-target="#singUpModal">
+                    Registrate Ahora
                 </button>
                 <p>ó</p>
-                <button>
-                    <p>Registrate Ahora</p>
-                </button>
+                <button>Inicia Sesion</button>
             </section>
         </div>
         <div class="conferencistas">
@@ -76,6 +78,100 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="singUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="singup-form">
+                        <div class="form-group">
+                            <input type="text" id="singup-email" class="form-control" placeholder="Correo electronico"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="singup-password" class="form-control" placeholder="Contraseña"
+                                required>
+                        </div>
+                        <button type="submit">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--BOOTSTRAP SCRIPTS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <!--FIREBASE SCRIPTS-->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js'
+        import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js'
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCsBu2ji06cf5yuAwtB8TFgDdAU9DYCVqk",
+            authDomain: "snackconference.firebaseapp.com",
+            projectId: "snackconference",
+            storageBucket: "snackconference.appspot.com",
+            messagingSenderId: "72898700537",
+            appId: "1:72898700537:web:537dbc3dcdfe113f38ee28"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        const singupForm = document.querySelector('#singup-form');
+
+        singupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('singup-email').value
+            const password = document.getElementById('singup-password').value
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    //Signed in
+                    const user = userCredential.user;
+                    //Clear the form
+                    singupForm.reset();
+                    //Close the modal
+                    $('#singUpModal').modal('hide')
+                    console.log("created")
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message; 
+
+                    console.log(errorCode + errorMessage)
+                })
+        })
+
+    </script>
+
+    <!--CUSTOM SCRIPTS-->
+    <script src="main.js"></script>
 </body>
 
 </html>
